@@ -33,7 +33,7 @@ export const App = () => {
       };
 
       const url =
-        'https://directions-service.azurewebsites.net/api/uploadtextresponse?code=Nsr00Qe2TxgkVJTH4y5mFIcFaomvOsm/jtSYCGbeSkVqcp4C48xxpQ==';
+        'https://directions-service.azurewebsites.net/api/uploadSpeechResponse?code=Iw0bz6gWTmGHE1gfjHqQYA7hbaeAPdLcJJSuoAj00Jhr6qIQbmT/Vw==';
 
       fetch(url, {
         method: 'POST',
