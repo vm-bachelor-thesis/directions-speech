@@ -67,7 +67,7 @@ export const SpeechExperimentQuestionnaire = ({
       <Text type="onGrayBackground" margin="bottom+horizontal">
         Beskriv så att en person som är i närområdet hittar fram till huset.
         Tänk på att beskrivningen ska kunna användas året om och av personer som
-        inte hittar i närområdet.
+        inte varit här tidigare.
       </Text>
 
       <Message
