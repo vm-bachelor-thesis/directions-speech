@@ -12,7 +12,7 @@ export const templates = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
-  messageTextListening: {
+  messageTextStatus: {
     color: '#aaa',
   },
 });

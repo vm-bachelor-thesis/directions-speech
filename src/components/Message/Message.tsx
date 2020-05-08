@@ -6,14 +6,19 @@ import { templates } from './templates';
 
 export interface MessageProps {
   text: string;
-  type?: 'default' | 'listening';
+  type?: 'default' | 'status';
+  connected?: boolean;
 }
 
-export const Message = ({ text, type = 'default' }: MessageProps) => {
+export const Message = ({
+  text,
+  type = 'default',
+  connected = false,
+}: MessageProps) => {
   const [dots, setDots] = useState<number>(0);
 
   useEffect(() => {
-    if (type === 'listening') {
+    if (type === 'status') {
       const timerId = setInterval(
         () => setDots(dots === 3 ? 0 : dots + 1),
         200,
@@ -26,16 +31,16 @@ export const Message = ({ text, type = 'default' }: MessageProps) => {
 
   const textFlattenedStyle = StyleSheet.flatten([
     {},
-    type === 'listening' && templates.messageTextListening,
+    type === 'status' && templates.messageTextStatus,
   ]);
 
-  const computedText = type === 'listening' ? text + '.'.repeat(dots) : text;
+  const computedText = type === 'status' ? text + '.'.repeat(dots) : text;
 
   return (
     <View style={templates.messageView}>
-      {type === 'listening' && (
+      {type === 'status' && (
         <ConnectionIndicator
-          state={type === 'listening' ? 'connected' : 'disconnected'}
+          state={connected ? 'connected' : 'disconnected'}
           margin="right"
         />
       )}

@@ -70,7 +70,11 @@ export const SpeechExperimentQuestionnaire = ({
         inte hittar i närområdet.
       </Text>
 
-      <Message type="listening" text={connected ? 'Lyssnar' : 'Ansluter'} />
+      <Message
+        type="status"
+        text={connected ? 'Lyssnar' : 'Ansluter'}
+        connected={connected}
+      />
 
       {messages &&
         messages.map((message, index: number) => (
