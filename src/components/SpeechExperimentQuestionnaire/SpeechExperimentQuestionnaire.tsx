@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Button } from 'react-native';
 import { View, Text } from 'directions-components';
-import { Message } from './Message';
+import { Message } from '../Message/Message';
 import * as signalR from '@microsoft/signalr';
 
 export interface TextExperimentQuestionnaireProps {

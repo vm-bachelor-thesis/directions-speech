@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text } from 'directions-components';
-import { templates } from './templates';
 import { StyleSheet } from 'react-native';
+import { View, Text } from 'directions-components';
+import { ConnectionIndicator } from '../ConnectionIndicator/ConnectionIndicator';
+import { templates } from './templates';
 
 export interface MessageProps {
   text: string;
@@ -32,6 +33,12 @@ export const Message = ({ text, type = 'default' }: MessageProps) => {
 
   return (
     <View style={templates.messageView}>
+      {type === 'listening' && (
+        <ConnectionIndicator
+          state={type === 'listening' ? 'connected' : 'disconnected'}
+          margin="right"
+        />
+      )}
       <Text style={textFlattenedStyle}>{computedText}</Text>
     </View>
   );
