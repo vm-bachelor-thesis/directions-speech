@@ -4,7 +4,7 @@ import {
   SUSQuestionnaire,
   CompletedMessage,
 } from 'directions-components';
-import { TextExperimentQuestionnaire } from './components';
+import { SpeechExperimentQuestionnaire } from './components';
 
 export const App = () => {
   const [characteristicsResponse, setCharacteristicsResponse] = useState<
@@ -58,7 +58,7 @@ export const App = () => {
 
   if (!experimentDone) {
     return (
-      <TextExperimentQuestionnaire callback={() => setExperimentDone(true)} />
+      <SpeechExperimentQuestionnaire callback={() => setExperimentDone(true)} />
     );
   }
 

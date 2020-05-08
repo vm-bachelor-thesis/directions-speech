@@ -4,13 +4,13 @@ import { View, Text } from 'directions-components';
 import { Message } from '../Message/Message';
 import * as signalR from '@microsoft/signalr';
 
-export interface TextExperimentQuestionnaireProps {
+export interface SpeechExperimentQuestionnaireProps {
   callback(): void;
 }
 
-export const TextExperimentQuestionnaire = ({
+export const SpeechExperimentQuestionnaire = ({
   callback,
-}: TextExperimentQuestionnaireProps) => {
+}: SpeechExperimentQuestionnaireProps) => {
   const [connected, setConnected] = useState<boolean>(false);
   const [messages, setMessages] = useState<string[]>([]);
 
